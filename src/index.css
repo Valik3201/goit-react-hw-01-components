@@ -17,3 +17,28 @@ code {
 h1 {
   font-size: 3rem;
 }
+
+.nav-btn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 75%;
+  margin-bottom: 1rem;
+}
+
+.nav-btn button {
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  background-color: #274c77;
+  color: #e7ecef;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-btn button:hover {
+  background-color: #6096ba;
+}

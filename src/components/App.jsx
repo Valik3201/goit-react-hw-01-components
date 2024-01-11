@@ -1,7 +1,38 @@
+import { useState } from 'react';
+
 import Profile from './Profile.jsx';
 import user from '../data/user.json';
 
 export const App = () => {
+  const [activeTab, setActiveTab] = useState('profile');
+
+  const handleTabChange = tab => {
+    setActiveTab(tab);
+  };
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'profile':
+        return (
+          <Profile
+            username={user.username}
+            tag={user.tag}
+            location={user.location}
+            avatar={user.avatar}
+            stats={user.stats}
+          />
+        );
+      case 'statistics':
+      // return <Statistics />;
+      case 'friendsList':
+      // return <FriendsList />;
+      case 'transactionHistory':
+      // return <TransactionHistory />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div
       style={{
@@ -15,13 +46,23 @@ export const App = () => {
       }}
     >
       <h1>React Components</h1>
-      <Profile
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
-      />
+
+      <div className="nav-btn">
+        <button onClick={() => handleTabChange('profile')}>
+          1️⃣ Social Network Profile
+        </button>
+        <button onClick={() => handleTabChange('statistics')}>
+          2️⃣ Statistics Section
+        </button>
+        <button onClick={() => handleTabChange('friendsList')}>
+          3️⃣ Friends List
+        </button>
+        <button onClick={() => handleTabChange('transactionHistory')}>
+          4️⃣ Transaction History
+        </button>
+      </div>
+
+      {renderTabContent()}
     </div>
   );
 };

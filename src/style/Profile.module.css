@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.profile {
+  width: 50%;
+}
+.profile .description,
+.profile .stats {
+  padding: 2rem;
+  border: 2px solid #274c77;
+}
+.profile .description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  background-color: #274c77;
+  color: #e7ecef;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.profile .description .avatar {
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+  background-color: #e7ecef;
+}
+.profile .description .name {
+  font-weight: 700;
+}
+.profile .description .tag {
+  color: #a3cef1;
+}
+.profile .description .location::before {
+  content: "📌";
+  padding-right: 0.125rem;
+}
+.profile .stats {
+  display: flex;
+  font-size: 1.25rem;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-inline-start: 0;
+  color: #274c77;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.profile .stats li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.profile .stats .label {
+  font-weight: 700;
+}
+.profile .stats .quantity {
+  color: #8b8c89;
+}/*# sourceMappingURL=Profile.module.css.map */

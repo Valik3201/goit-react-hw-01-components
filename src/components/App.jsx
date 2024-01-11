@@ -23,11 +23,17 @@ export const App = () => {
           />
         );
       case 'statistics':
-      // return <Statistics />;
+        // return <Statistics />;
+        break;
+
       case 'friendsList':
-      // return <FriendsList />;
+        // return <FriendsList />;
+        break;
+
       case 'transactionHistory':
-      // return <TransactionHistory />;
+        // return <TransactionHistory />;
+        break;
+
       default:
         return null;
     }

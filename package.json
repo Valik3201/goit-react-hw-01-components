@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://valik3201.github.io/goit-react-hw-01-components/",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^14.5.2",
     "react": "^18.2.0",

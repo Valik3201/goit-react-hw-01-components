@@ -64,6 +64,6 @@ export const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  width: 50%;
   padding: 2rem;
 `;

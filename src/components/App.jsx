@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Profile from './ProfileComponent/Profile.jsx';
 import user from '../data/user.json';
 
+import { Statistics } from './StatisticsComponent/Statistics.jsx';
+import data from '../data/data.json';
+
 import * as Styled from './styles.js';
 
 import ReactLogo from '../assets/react-logo.svg';
@@ -27,8 +30,7 @@ export const App = () => {
           />
         );
       case 'statistics':
-        // return <Statistics />;
-        break;
+        return <Statistics title="Upload stats" stats={data} />;
 
       case 'friendsList':
         // return <FriendsList />;

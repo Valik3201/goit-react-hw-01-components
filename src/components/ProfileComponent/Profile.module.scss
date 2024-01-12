@@ -1,9 +1,3 @@
-$light-gray: #e7ecef;
-$dark-blue: #274c77;
-$light-blue: #6096ba;
-$lighter-blue: #a3cef1;
-$gray: #8b8c89;
-
 .profile {
   width: 50%;
   box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.1), 0 0 0 rgba(0, 0, 0, 0.1);
@@ -15,6 +9,7 @@ $gray: #8b8c89;
 
   .description {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -76,7 +71,7 @@ $gray: #8b8c89;
     }
 
     .quantity {
-      color: $gray;
+      color: gray;
     }
   }
 }

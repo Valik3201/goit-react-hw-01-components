@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Import styles
-import styles from '../style/Profile.module.scss';
+import styles from './/Profile.module.scss';
 
 /**
  * Profile component displays user information and statistics.

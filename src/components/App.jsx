@@ -1,7 +1,11 @@
 import { useState } from 'react';
 
-import Profile from './Profile.jsx';
+import Profile from './ProfileComponent/Profile.jsx';
 import user from '../data/user.json';
+
+import * as Styled from './styles.js';
+
+import ReactLogo from '../assets/react-logo.svg';
 
 export const App = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -40,35 +44,30 @@ export const App = () => {
   };
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      <h1>React Components</h1>
-
-      <div className="nav-btn">
-        <button onClick={() => handleTabChange('profile')}>
-          1️⃣ Social Network Profile
-        </button>
-        <button onClick={() => handleTabChange('statistics')}>
-          2️⃣ Statistics Section
-        </button>
-        <button onClick={() => handleTabChange('friendsList')}>
-          3️⃣ Friends List
-        </button>
-        <button onClick={() => handleTabChange('transactionHistory')}>
-          4️⃣ Transaction History
-        </button>
-      </div>
-
-      {renderTabContent()}
-    </div>
+    <Styled.AppContainer>
+      <Styled.NavBar>
+        <Styled.Logo src={ReactLogo} alt="React Logo" />
+        <Styled.Heading>
+          React <br></br>Components
+        </Styled.Heading>
+        <div>
+          <Styled.NavButton onClick={() => handleTabChange('profile')}>
+            Social Network Profile
+          </Styled.NavButton>
+          <Styled.NavButton onClick={() => handleTabChange('statistics')}>
+            Statistics Section
+          </Styled.NavButton>
+          <Styled.NavButton onClick={() => handleTabChange('friendsList')}>
+            Friends List
+          </Styled.NavButton>
+          <Styled.NavButton
+            onClick={() => handleTabChange('transactionHistory')}
+          >
+            Transaction History
+          </Styled.NavButton>
+        </div>
+      </Styled.NavBar>
+      <Styled.Content>{renderTabContent()}</Styled.Content>
+    </Styled.AppContainer>
   );
 };

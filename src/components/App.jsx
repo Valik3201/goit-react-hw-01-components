@@ -6,6 +6,9 @@ import user from '../data/user.json';
 import { Statistics } from './StatisticsComponent/Statistics.jsx';
 import data from '../data/data.json';
 
+import { FriendList } from './FriendListComponent/FriendList.jsx';
+import friends from '../data/friends.json';
+
 import * as Styled from './styles.js';
 
 import ReactLogo from '../assets/react-logo.svg';
@@ -33,8 +36,7 @@ export const App = () => {
         return <Statistics title="Upload stats" stats={data} />;
 
       case 'friendsList':
-        // return <FriendsList />;
-        break;
+        return <FriendList friends={friends} />;
 
       case 'transactionHistory':
         // return <TransactionHistory />;

@@ -8,10 +8,6 @@ export const Table = styled(StatisticsSection).attrs({
   text-align: center;
   width: 90%;
 
-  th {
-    width: 200px;
-  }
-
   td,
   th {
     border-bottom: 1px solid #d4d9e1;

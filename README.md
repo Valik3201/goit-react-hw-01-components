@@ -1,6 +1,9 @@
-# ⚛️ React Components
+<div align="center">
+  <img src="https://github.com/Valik3201/goit-react-hw-01-components/blob/main/src/assets/react-logo.svg" alt="React Logo" width="100" height="100">
+  <h1>React Components</h1>
+</div>
 
-In this repository, you'll find a collection of React components that you can easily integrate into your web applications. These components are designed to be modular, customizable, and user-friendly. Let's dive into the details of each component!
+In this repository, you'll find a collection of React components. These components are designed to be modular, customizable, and user-friendly.
 
 ## 🌐 App Root Component
 
@@ -12,7 +15,9 @@ All components are seamlessly rendered on the same page within the common contai
 ## 1️⃣ Social Network Profile
 
 ### Preview
-![Profile Component Preview](./preview-images/profile.png)
+<div align="center">
+  <img src="https://github.com/Valik3201/goit-react-hw-01-components/blob/main/src/assets/profile.png" alt="Profile Component Preview" width="400">
+</div>
 
 ### Description
 The `Profile` component displays information about a social network user. It accepts various props such as `username`, `tag`, `location`, `avatar`, and `stats`. The styling is implemented using Styled Components.
@@ -33,7 +38,9 @@ import user from 'path/to/user.json';
 ## 2️⃣ Statistics Section
 
 ### Preview
-![Statistics Component Preview](./preview-images/statistics.png)
+<div align="center">
+  <img src="https://github.com/Valik3201/goit-react-hw-01-components/blob/main/src/assets/statistics.png" alt="Statistics Component Preview" width="400">
+</div>
 
 ### Description
 The `Statistics` component showcases statistical information with a clean and visually appealing layout. It accepts `title` (optional) and `stats` props. You can customize the background color of the statistical items or generate random colors.
@@ -49,7 +56,9 @@ import data from '/path/to/data.json';
 ## 3️⃣ Friends List
 
 ### Preview
-![FriendList Component Preview](./preview-images/friends-list.png)
+<div align="center">
+  <img src="https://github.com/Valik3201/goit-react-hw-01-components/blob/main/src/assets/friends-list.png" alt="FriendList Component Preview" width="400">
+</div>
 
 ### Description
 The `FriendList` component allows you to display information about a user's friends. It accepts a `friends` prop (an array of friend objects). The FriendListItem component is also included for individual friend entries.
@@ -64,7 +73,9 @@ import friends from 'path/to/friends.json';
 ## 4️⃣ Transaction History
 
 ### Preview
-![TransactionHistory Component Preview](./preview-images/transaction-history.png)
+<div align="center">
+  <img src="https://github.com/Valik3201/goit-react-hw-01-components/blob/main/src/assets/transactions.png" alt="TransactionHistory Component Preview" width="400">
+</div>
 
 ### Description
 The `TransactionHistory` component creates a table layout for displaying a user's transaction history. It accepts an `items` prop (an array of transaction objects from transactions.json).

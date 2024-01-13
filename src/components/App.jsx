@@ -18,9 +18,19 @@ import * as Styled from './styles.js';
 
 import ReactLogo from '../assets/react-logo.svg';
 
+/**
+ * App component serves as the main entry point for the application, rendering different tabs based on user selection.
+ * @component
+ * @returns {JSX.Element} - The rendered App component.
+ */
 export const App = () => {
   const [activeTab, setActiveTab] = useState('profile');
 
+  /**
+   * Handles the change of the active tab.
+   * @function
+   * @param {string} tab - The tab to set as active.
+   */
   const handleTabChange = tab => {
     setActiveTab(tab);
     if (window.innerWidth <= 768) {
@@ -30,10 +40,19 @@ export const App = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  /**
+   * Toggles the mobile menu open/closed state.
+   * @function
+   */
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  /**
+   * Renders the content for the active tab.
+   * @function
+   * @returns {JSX.Element | null} - The rendered content for the active tab, or null if the tab is not recognized.
+   */
   const renderTabContent = () => {
     switch (activeTab) {
       case 'profile':

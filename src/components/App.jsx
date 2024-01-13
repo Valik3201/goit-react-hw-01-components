@@ -9,6 +9,9 @@ import data from '../data/data.json';
 import { FriendList } from './FriendListComponent/FriendList.jsx';
 import friends from '../data/friends.json';
 
+import { TransactionHistory } from './TransactionHistory/TransactionHistory.jsx';
+import transactions from '../data/transactions.json';
+
 import * as Styled from './styles.js';
 
 import ReactLogo from '../assets/react-logo.svg';
@@ -39,8 +42,7 @@ export const App = () => {
         return <FriendList friends={friends} />;
 
       case 'transactionHistory':
-        // return <TransactionHistory />;
-        break;
+        return <TransactionHistory transactions={transactions} />;
 
       default:
         return null;

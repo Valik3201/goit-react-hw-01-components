@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AppContainer = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   background-image: conic-gradient(
     from 90deg at -10% 100%,
     rgb(188, 193, 205) 0deg,

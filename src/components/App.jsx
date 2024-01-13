@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { StyleSheetManager } from 'styled-components';
+import isPropValid from '@emotion/is-prop-valid';
 
 import Profile from './ProfileComponent/Profile.jsx';
 import user from '../data/user.json';
@@ -21,6 +23,15 @@ export const App = () => {
 
   const handleTabChange = tab => {
     setActiveTab(tab);
+    if (window.innerWidth <= 768) {
+      toggleMenu();
+    }
+  };
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const renderTabContent = () => {
@@ -50,32 +61,38 @@ export const App = () => {
   };
 
   return (
-    <Styled.AppContainer>
-      <Styled.NavBar>
-        <Styled.Logo src={ReactLogo} alt="React Logo" />
-        <Styled.Heading>
-          React <br></br>Components
-        </Styled.Heading>
-        <div>
-          <Styled.NavButton onClick={() => handleTabChange('profile')}>
-            Social Network Profile
-          </Styled.NavButton>
-          <Styled.NavButton onClick={() => handleTabChange('statistics')}>
-            Statistics Section
-          </Styled.NavButton>
-          <Styled.NavButton onClick={() => handleTabChange('friendsList')}>
-            Friends List
-          </Styled.NavButton>
-          <Styled.NavButton
-            onClick={() => handleTabChange('transactionHistory')}
-          >
-            Transaction History
-          </Styled.NavButton>
-        </div>
-      </Styled.NavBar>
-      <Styled.Content key={activeTab} fadeType="in">
-        {renderTabContent()}
-      </Styled.Content>
-    </Styled.AppContainer>
+    <StyleSheetManager shouldForwardProp={prop => isPropValid(prop)}>
+      <Styled.AppContainer>
+        <Styled.NavBar isOpen={isMenuOpen}>
+          <Styled.Logo src={ReactLogo} alt="React Logo" />
+          <Styled.Heading>
+            React <br />
+            Components
+          </Styled.Heading>
+          <div>
+            <Styled.NavButton onClick={() => handleTabChange('profile')}>
+              Social Network Profile
+            </Styled.NavButton>
+            <Styled.NavButton onClick={() => handleTabChange('statistics')}>
+              Statistics Section
+            </Styled.NavButton>
+            <Styled.NavButton onClick={() => handleTabChange('friendsList')}>
+              Friends List
+            </Styled.NavButton>
+            <Styled.NavButton
+              onClick={() => handleTabChange('transactionHistory')}
+            >
+              Transaction History
+            </Styled.NavButton>
+          </div>
+        </Styled.NavBar>
+        <Styled.BurgerButton isOpen={isMenuOpen} onClick={toggleMenu}>
+          ☰
+        </Styled.BurgerButton>
+        <Styled.Content key={activeTab} fadeType="in" isOpen={isMenuOpen}>
+          {renderTabContent()}
+        </Styled.Content>
+      </Styled.AppContainer>
+    </StyleSheetManager>
   );
 };

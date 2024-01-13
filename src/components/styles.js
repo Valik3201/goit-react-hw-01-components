@@ -16,7 +16,7 @@ export const NavBar = styled.div`
   box-sizing: border-box;
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${({ isOpen }) => (isOpen ? '-50%' : '0')};
   width: 50%;
   height: 100vh;
   padding: 2rem;
@@ -27,6 +27,14 @@ export const NavBar = styled.div`
     rgb(22, 24, 29) 1turn
   );
   color: rgb(246, 247, 249);
+  transition: left 500ms ease-in-out;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    left: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    padding-top: 4rem;
+  }
 
   & div {
     display: flex;
@@ -36,15 +44,39 @@ export const NavBar = styled.div`
   }
 `;
 
+export const BurgerButton = styled.div`
+  display: none;
+  color: ${({ isOpen }) => (isOpen ? '#61dafb' : '#24292e')};
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 500ms ease-in-out;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+  }
+`;
+
 export const Logo = styled.img`
   width: 5rem;
   margin-bottom: 1rem;
 `;
 
 export const Heading = styled.h1`
-  font-size: 4rem;
+  font-size: 3rem;
   color: rgb(246, 247, 249);
   margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
 `;
 
 export const NavButton = styled.button`
@@ -71,10 +103,15 @@ export const Content = styled.div`
   align-items: center;
   width: 50%;
   padding: 2rem;
-  margin-left: 50%;
+  margin-left: ${({ isOpen }) => (isOpen ? '0' : '50%')};
   opacity: 1;
   transition: opacity 500ms ease-in-out;
   animation: ${({ fadeType }) => (fadeType === 'in' ? fadeIn : fadeOut)} 500ms;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+  }
 `;
 
 const fadeIn = keyframes`

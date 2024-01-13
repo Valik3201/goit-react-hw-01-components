@@ -18,7 +18,7 @@ export const TransactionHistory = ({ transactions }) => {
         {transactions.map(({ id, type, amount, currency }) => (
           <tr key={id}>
             <td>{type}</td>
-            <td>{amount}</td>
+            <td>{parseFloat(amount).toFixed(2)}</td>
             <td>{currency}</td>
           </tr>
         ))}
@@ -32,7 +32,7 @@ TransactionHistory.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
     })
   ).isRequired,

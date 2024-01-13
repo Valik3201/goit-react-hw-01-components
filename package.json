@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://valik3201.github.io/goit-react-hw-01-components/",
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.1",
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",

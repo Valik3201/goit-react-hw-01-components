@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const AppContainer = styled.div`
   display: flex;
@@ -13,7 +13,12 @@ export const AppContainer = styled.div`
 `;
 
 export const NavBar = styled.div`
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 50%;
+  height: 100vh;
   padding: 2rem;
   background-image: conic-gradient(
     from 90deg at -10% 100%,
@@ -66,4 +71,26 @@ export const Content = styled.div`
   align-items: center;
   width: 50%;
   padding: 2rem;
+  margin-left: 50%;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  animation: ${({ fadeType }) => (fadeType === 'in' ? fadeIn : fadeOut)} 500ms;
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0.01;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.01;
+  }
 `;

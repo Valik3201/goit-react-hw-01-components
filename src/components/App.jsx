@@ -73,7 +73,9 @@ export const App = () => {
           </Styled.NavButton>
         </div>
       </Styled.NavBar>
-      <Styled.Content>{renderTabContent()}</Styled.Content>
+      <Styled.Content key={activeTab} fadeType="in">
+        {renderTabContent()}
+      </Styled.Content>
     </Styled.AppContainer>
   );
 };
